@@ -1,10 +1,20 @@
 REPORTER = spec
+
+ifeq "$(OS)" "Windows_NT"
+	BINPATH = node_modules\\.bin\\
+	set NODE_ENV=test
+else
+	BINPATH = ./node_modules/.bin/
+	export NODE_ENV=test
+endif
+
 test:
+	@echo $(BINPATH)
 	$(MAKE) lint
-	@NODE_ENV=test ./node_modules/.bin/mocha -b --require blanket --reporter $(REPORTER)
+	$(BINPATH)mocha -b --require blanket --reporter $(REPORTER)
 
 lint:
-	./node_modules/.bin/jshint ./lib ./test
+	$(BINPATH)jshint lib test
 
 test-cov:
 	$(MAKE) test REPORTER=spec
