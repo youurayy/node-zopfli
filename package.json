@@ -19,7 +19,7 @@
   "homepage": "https://github.com/pierreinglebert/node-zopfli",
   "repository": {
     "type": "git",
-    "url": "https://github.com/pierreinglebert/node-zopfli.git"
+    "url": "https://github.com/bruce-one/node-zopfli.git"
   },
   "bugs": {
     "url": "https://github.com/pierreinglebert/node-zopfli/issues"
