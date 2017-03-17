@@ -52,4 +52,4 @@ script:
 after_success:
   - npm run coveralls
   - COMMIT_MESSAGE=$(git show -s --format=%B $TRAVIS_COMMIT | tr -d '\n')
-  - if [[ ${COMMIT_MESSAGE} =~ "[publish]" ]]; then $(npm bin)/node-pre-gyp package && $(npm bin)/node-pre-gyp-github publish; fi;
+  - if [[ ${COMMIT_MESSAGE} =~ "[publish]" ]]; then $(npm bin)/node-pre-gyp package && $(npm bin)/node-pre-gyp-github publish -r; fi;
